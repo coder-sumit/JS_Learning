@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #outer{
+            width: 200px;
+            height: 200px;
+            margin: 40px auto;
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+
+        </div>
+    </div>
+    
+   <script>
+       let outer = document.querySelector("#outer");
+       let inner = document.querySelector("#inner");
+       inner.addEventListener('click', (event)=> {
+           console.log("inner div clicked");
+           event.stopPropagation(); // stops propagation of event
+          });
+       outer.addEventListener('click', ()=> console.log("outer div clicked"));
+       document.addEventListener('click', ()=> console.log("document clicked"));
+   </script>
+</body>
+</html>

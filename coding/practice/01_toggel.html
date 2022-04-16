@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #outer{
+           width: 100px;
+           border-radius: 20px;
+           margin:  auto;
+           margin-top: 40px;
+           border: 1px solid black;
+           height: 20px;
+           box-sizing: border-box;
+           position: relative;
+       }
+       .btn{
+           width: 13px;
+           height: 13px;
+           padding: 2px;
+           background-color: black;
+           border-radius: 50%;
+       }
+       h1{
+           text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div class="btn"></div>
+    </div>
+    <h1>Click On The Toggle Button</h1>
+    <script>
+        let outer = document.getElementById('outer');
+        let btn = document.querySelector(".btn");
+        let text = document.querySelector("h1");
+        console.log(btn);
+        
+       let clickCounter = 0;
+        outer.addEventListener('click', ()=>{
+            clickCounter++;
+            if(clickCounter%2 != 0){
+            outer.style.backgroundColor = "white";
+            text.style.color ="white";
+            btn.style = "transform: translateX(80px);";
+            document.body.style.backgroundColor = "black";
+            }else{
+                outer.style.backgroundColor = "white";
+                document.body.style.backgroundColor = "white";
+                btn.style = "transform: translateX(0px);";
+                text.style.color ="#000";
+                
+            }
+        });
+
+    </script>
+</body>
+</html>

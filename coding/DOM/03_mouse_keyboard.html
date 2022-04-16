@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse and Keyboard</title>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            margin: 40px auto;
+            background-color: aquamarine;
+        }
+
+        #search {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
-    
-    <script src="02_events.js"></script>
+    <div id="box"></div>
+    <input type="text" name="search" id="search">
+    <script>
+        // mouse & keyBoard Events
+        // mouseover
+        let box = document.getElementById("box");
+        box.addEventListener('mouseover', function () {
+            console.log("mouseover");
+        });
+        // mouseout
+        box.addEventListener('mouseout', function(){
+            console.log("mouseout");
+        });
+        // keypress
+        // let searchInput = document.getElementById("search");
+        // searchInput.addEventListener('keypress', function(){
+        //        console.log("keypress");
+        // });
+        // if in game whole document
+        document.addEventListener('keypress', function(){
+            console.log("keypress");
+        });
+        // keypress is not for up down keys and shift ctrl etc
+        // for that we have keydown(when press) & keyup(when release) events
+        // document.addEventListener('keydown', function(){
+        //     console.log("key down");
+        // });
+        // document.addEventListener('keyup', function(){
+        //     console.log("key up");
+        // });
+        // if want to know which key is pressed
+        document.addEventListener('keydown', function(event){
+            console.log("key down", event.keyCode);
+        });
+        
+    </script>
 </body>
+
 </html>
